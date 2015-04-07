@@ -38,7 +38,13 @@ function save(){
 
 function load(){
 	var saveGame = JSON.parse(localStorage.getItem("saveData"));
+	//console.log("works");
+	//console.log(saveGame)
+	if (typeof saveGame.points !== "undefined") points = saveGame.points;
+	if (typeof saveGame.cursors !== "undefined") cursors.amount = saveGame.cursors;
 	
-	if (typeof savegame.points !== "undefined") points = saveGame.points;
-	if (typeof savegame.cursors !== "undefined") cursors = saveGame.cursors;
+	
+	document.getElementById("cursorDisplay").innerHTML = cursors.amount;
+	document.getElementById("pointsDisplay").innerHTML = points;
+	document.getElementById("cursorCostDisplay").innerHTML = nextCost;
 }

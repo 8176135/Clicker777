@@ -15,3 +15,6 @@ div.pointDisplayer{
 span#cursorDisplay{
 	margin-right:15px;
 }
+.sameLine{
+	display:inline;	
+}

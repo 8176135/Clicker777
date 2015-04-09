@@ -7,13 +7,26 @@
 </head>
 
 <body>
+
+<div id="titlePointsContainer">
+<h1 id="pageTitle">Clicker 777</h1>
 <div class="pointDisplayer">
 	<span id="pointsDisplay">0</span>
 </div>
+</div>
+
 <br>
-<button onClick="pointsClick(1)">Click me!</button> 
+
+<div id="clickContainer">
+
+<div id="clickPoints" class="button" onClick="pointsClick(1)" onMouseOver="mouseOverButton('clickPoints')" onMouseOut="mouseExitButton('clickPoints')" onMouseDown="mouseDownButton('clickPoints')" onMouseUp="mouseOverButton('clickPoints')">
+<h2>Click here!</h2>
+</div>
+
+</div>
+
 <br>
-<button onClick="buyCursor()">Buy 1 Cursor!</button> 
+<button id="buyCursorBtn"onClick="buyCursor()">Buy 1 Cursor!</button> 
 Currently have: <span id="cursorDisplay">0</span>
 Cost: <span id="cursorCostDisplay">10</span>
 <br>

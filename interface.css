@@ -1,8 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
-
+body{
+	font-family:Verdana, Geneva, sans-serif;	
+}
 div.pointDisplayer{
-	width:100%;
+	width:65%;
 	background-color:#1E1E1E;
 	color:#E1E1E1;
 	padding:20px 0px;
@@ -11,10 +13,48 @@ div.pointDisplayer{
 	font-weight:500;
 	text-align:center;
 	border-radius:20px;
+	margin-left:10px;
+	display:inline-block;
+	float:right;
+}
+div#clickPoints{
+	background-color:#BBBBBB;
+	width:160px;
+	vertical-align:top;
+	height:70px;
+	padding:2px 15px;
+	display:inline-block;
+	margin-right:0px;
+}
+div#clickContainer{
+	height:74px;
+	text-align:center;
+	margin-right:auto;
+	margin-left:auto;
 }
 span#cursorDisplay{
 	margin-right:15px;
 }
 .sameLine{
-	display:inline;	
+	display:inline;
 }
+h1#pageTitle{
+	text-align:left;
+	font-weight:600;
+	font-style:normal;
+	font-size:36px;
+	color:#333;
+	display:inline-block;
+}
+#titlePointsContainer{
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	text-align:center;
+}
+.button{
+	border-radius:10px;
+	border:1px solid #000;
+	cursor:pointer;
+	-moz-user-select:none;
+}	

@@ -8,6 +8,15 @@ window.setInterval(function(){
 	pointsClick(cursors.amount * cursors.power);
 }, 1000);
 
+function mouseOverButton(buttonID){
+	document.getElementById(buttonID).style.backgroundColor = "#DDDDDD";
+}
+function mouseExitButton(buttonID){
+	document.getElementById(buttonID).style.backgroundColor = "#BBBBBB";
+}
+function mouseDownButton(buttonID){
+	document.getElementById(buttonID).style.backgroundColor = "#888888";
+}
 
 function pointsClick(number){
 	points += number;
@@ -18,16 +27,14 @@ function buyCursor(){
 	var cursorCost = Math.round(10 * Math.pow(1.15, cursors.amount));
 	if(points >= cursorCost){
 		cursors.amount += 1;
-		points -= cursorCost;
+		points -= cursorCost;6
 		document.getElementById("cursorDisplay").innerHTML = cursors.amount;
 		document.getElementById("pointsDisplay").innerHTML = points;
 	};
 	var nextCost = Math.round(10 * Math.pow(1.15, cursors.amount));
 	document.getElementById("cursorCostDisplay").innerHTML = nextCost;
 }
-
-
-
+		
 function save(){
 	var saveData = {
 		points: points,

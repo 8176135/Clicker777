@@ -2,7 +2,9 @@
 /* CSS Document */
 body{
 	font-family:Verdana, Geneva, sans-serif;
-	
+}
+::selection{
+	background-color:transparent;
 }
 div.pointDisplayer{
 	width:65%;
@@ -20,13 +22,26 @@ div.pointDisplayer{
 	cursor:crosshair;
 }
 div#clickPoints{
-	background-color:#BBBBBB;
+	/*background-color:#BBBBBB;*/
 	width:160px;
 	vertical-align:top;
 	height:70px;
 	padding:2px 15px;
 	display:inline-block;
 	margin-right:0px;
+}
+div#buyCursorBtn{
+	width:auto;
+	height:50px;
+	padding:3px 12px;
+	display:inline-block;
+	margin-right:8px;
+}
+p#buyCursorText{
+	text-align:center;
+	font-weight:600;
+	margin-bottom:8px;
+	margin-top:1px;
 }
 div#clickContainer{
 	height:74px;
@@ -74,4 +89,15 @@ h1#pageTitle{
 	border:1px solid #000;
 	cursor:pointer;
 	-moz-user-select:none;
+	background-color:#BBBBBB;
 }	
+.button:hover{
+	background-color:#DDDDDD;	
+}
+.button:active{
+	background-color:#888888;	
+}
+/*buttonEvents*/
+button.pressed{
+	background-color:#888888;
+}

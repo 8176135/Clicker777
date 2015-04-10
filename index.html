@@ -21,16 +21,19 @@
 
 <div id="clickContainer">
 
-<div id="clickPoints" class="button" onClick="pointsClick(1)" onMouseOver="mouseOverButton('clickPoints')" onMouseOut="mouseExitButton('clickPoints')" onMouseDown="mouseDownButton('clickPoints')" onMouseUp="mouseOverButton('clickPoints')">
+<div id="clickPoints" class="button" onClick="pointsClick(1)">
 <h2>Click here!</h2>
 </div>
 
 </div>
 
 <br>
-<button id="buyCursorBtn"onClick="buyCursor()">Buy 1 Cursor!</button> 
-Currently have: <span id="cursorDisplay">0</span>
+<!--<button id="buyCursorBtn"onClick="buyCursor()">Buy 1 Cursor!</button> -->
+<div id="buyCursorBtn" class="button">
+<p id="buyCursorText">Buy Cursor</p>
 Cost: <span id="cursorCostDisplay">10</span>
+</div>
+Currently have: <span id="cursorDisplay">0</span>
 <br>
 <div id="test1" style="display:none; width:80%; height:80px;background-color:#09C"></div>
 <br>

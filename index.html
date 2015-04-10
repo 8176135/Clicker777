@@ -3,6 +3,8 @@
 <head>
 <link rel="stylesheet" type="text/css" href="interface.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--<script src="jQuery/jquery-2.1.3.js"></script>-->
 <title>Clicker777</title>
 </head>
 
@@ -30,17 +32,30 @@
 Currently have: <span id="cursorDisplay">0</span>
 Cost: <span id="cursorCostDisplay">10</span>
 <br>
-
+<div id="test1" style="display:none; width:80%; height:80px;background-color:#09C"></div>
 <br>
 
 <br>
 <div class="bunchOfInstructions">
 <button onClick="save()">Save Game!</button>
 <button onClick="load()">Load Game!</button>
-<form class="sameLine">
+<!--<form class="sameLine">
     <input style="float:right" type="button" value="Why am I playing this game again?" onClick="window.open('Instructions/answers.html', 'newwindow', 'width=980, height=650')">
-</form>
+</form>-->
+<button id="whyPlay" class="sameLine">Why am I playing this game again?</button>
 </div>
-<script type="text/javascript" src="main.js"></script>
+<div id="whyPlayInfo">
+<h4>About this game</h2>
+<div class="infoBox">
+<p style="font-family:Verdana, Geneva, sans-serif; color:#CCC; font-weight:400">This is a incremental game, where you do something repeatitively to get points, and then spend these points to get upgrades and buildings to get more points. And in the end, you will have a mountain of points, which you then get rid of... <span style="font-weight:700; color:#F00">To get more points!</span>
+</p>
+</div>
+<h4>What's the point?</h2>
+<div class="infoBox">
+<p style="font-family:Verdana, Geneva, sans-serif; color:#CCC; font-weight:400"><span style="font-weight:700; color:#F00">Completly pointless...</span> Though scientists say that we might enjoy playing this type of game because humans like progress, and having this in the background means you are making progress doing whatever you are doing, and even more progress having something inceasing in the background, thats <b>double</b> the progress!
+</p>
+</div>
+</div>
+<script src="main.js"></script>
 </body>
 </html>

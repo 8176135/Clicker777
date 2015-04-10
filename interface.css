@@ -1,7 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 body{
-	font-family:Verdana, Geneva, sans-serif;	
+	font-family:Verdana, Geneva, sans-serif;
+	
 }
 div.pointDisplayer{
 	width:65%;
@@ -16,6 +17,7 @@ div.pointDisplayer{
 	margin-left:10px;
 	display:inline-block;
 	float:right;
+	cursor:crosshair;
 }
 div#clickPoints{
 	background-color:#BBBBBB;
@@ -32,11 +34,26 @@ div#clickContainer{
 	margin-right:auto;
 	margin-left:auto;
 }
+div.infoBox{
+	background-color:#151515;
+	padding: 10px 18px;
+	border:double #666666 9px;
+	border-radius:20px;
+	margin-top:10px;
+	font-size:16px
+}
 span#cursorDisplay{
 	margin-right:15px;
 }
 .sameLine{
 	display:inline;
+	float:right;
+}
+
+#whyPlayInfo{
+	float:right;
+	width:50%;	
+	display:none;
 }
 h1#pageTitle{
 	text-align:left;

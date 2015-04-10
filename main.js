@@ -4,6 +4,12 @@ var points = 0;
 //Buildings
 var cursors = {amount:0, power:1};
 
+$(document).ready(function(e) {
+    $("button#whyPlay").click(function(){
+		$("#whyPlayInfo").slideToggle(1000);
+	});
+});
+
 window.setInterval(function(){
 	pointsClick(cursors.amount * cursors.power);
 }, 1000);

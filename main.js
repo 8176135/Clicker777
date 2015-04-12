@@ -2,9 +2,32 @@
 var points = 0;
 
 //Buildings
-var cursors = {amount:0, power:1};
+var cursors = {amount:0, power:1, baseCost:10};
+var cursorCost = Math.round(cursors.baseCost * Math.pow(1.15, cursors.amount));
+
+var Item = {amount:0, power:5, baseCost:60};
+var ItemCost =  Math.round(Item.baseCost * Math.pow(1.15, Item.amount));
 
 $(document).ready(function(e) {
+	allDaCheckz();
+	$(".buttonUnLit, .button").qtip({
+		position:{
+			my: 'center left',
+			at: 'center right'
+		},
+		style: {classes: 'toolTipStyles qtip-dark qtip-rounded qtip-shadow'},
+		show: {
+            effect: function() {
+                $(this).fadeIn(150);
+            }
+        },
+        hide: {
+            effect: function() {
+                $(this).fadeOut(150);
+            }
+        },
+	});
+	
     $("button#whyPlay").click(function(){
 		$("#whyPlayInfo").slideToggle(1000);
 	});
@@ -14,31 +37,42 @@ window.setInterval(function(){
 	pointsClick(cursors.amount * cursors.power);
 }, 1000);
 
-function mouseOverButton(buttonID){
-	document.getElementById(buttonID).style.backgroundColor = "#DDDDDD";
-}
-function mouseExitButton(buttonID){
-	document.getElementById(buttonID).style.backgroundColor = "#BBBBBB";
-}
-function mouseDownButton(buttonID){
-	document.getElementById(buttonID).style.backgroundColor = "#888888";
-}
-
 function pointsClick(number){
 	points += number;
 	document.getElementById("pointsDisplay").innerHTML = points;
+	allDaCheckz();
 }
 
-function buyCursor(){
-	var cursorCost = Math.round(10 * Math.pow(1.15, cursors.amount));
-	if(points >= cursorCost){
-		cursors.amount += 1;
-		points -= cursorCost;6
-		document.getElementById("cursorDisplay").innerHTML = cursors.amount;
+function buyItem(cost, object, display){
+	if(points >= cost){
+		object.amount += 1;
+		points -= cost;
 		document.getElementById("pointsDisplay").innerHTML = points;
+		allDaCheckz();
 	};
-	var nextCost = Math.round(10 * Math.pow(1.15, cursors.amount));
-	document.getElementById("cursorCostDisplay").innerHTML = nextCost;
+	cost = Math.round(cursors.baseCost * Math.pow(1.15, object.amount));
+	document.getElementById(display).innerHTML = cost;
+	return cost;
+}
+
+//BuyBuildins
+function buyCursor(){
+	cursorCost = buyItem(cursorCost,cursors,"cursorCostDisplay");	
+}
+
+function allDaCheckz(){
+	
+	if(points >= cursorCost){
+		$("#buyCursorBtn").addClass("button");
+		$("#buyCursorBtn").removeClass("buttonUnLit");
+	} 
+	else{
+		$("#buyCursorBtn").addClass("buttonUnLit");
+		$("#buyCursorBtn").removeClass("button");
+	}
+	
+	$("#buyCursorBtn").attr("title","Currently have: " + cursors.amount);
+	
 }
 		
 function save(){

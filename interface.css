@@ -1,4 +1,3 @@
-@charset "utf-8";
 /* CSS Document */
 body{
 	font-family:Verdana, Geneva, sans-serif;
@@ -90,6 +89,13 @@ h1#pageTitle{
 	cursor:pointer;
 	-moz-user-select:none;
 	background-color:#BBBBBB;
+}
+.buttonUnLit{
+	border-radius:10px;
+	border:1px solid #000;
+	cursor:pointer;
+	-moz-user-select:none;
+	background-color:#6B3F3F;
 }	
 .button:hover{
 	background-color:#DDDDDD;	
@@ -97,7 +103,7 @@ h1#pageTitle{
 .button:active{
 	background-color:#888888;	
 }
-/*buttonEvents*/
-button.pressed{
-	background-color:#888888;
+
+.toolTipStyles{
+	font-size:24px;
 }

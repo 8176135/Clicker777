@@ -10,7 +10,8 @@ var ItemCost =  Math.round(Item.baseCost * Math.pow(1.15, Item.amount));
 
 $(document).ready(function(e) {
 	allDaCheckz();
-	$(".buttonUnLit, .button").qtip({
+	$(".buttonUnLit[data-tooltip], .button[data-tooltip]").qtip({
+		
 		position:{
 			my: 'center left',
 			at: 'center right'
@@ -26,6 +27,13 @@ $(document).ready(function(e) {
                 $(this).fadeOut(150);
             }
         },
+		content: {
+			text: function(event, api) {
+            // Retrieve content from custom attribute of the $('.selector') elements.
+            return $(this).attr('data-tooltip');
+			}
+        }
+		
 	});
 	
     $("button#whyPlay").click(function(){
@@ -71,8 +79,9 @@ function allDaCheckz(){
 		$("#buyCursorBtn").removeClass("button");
 	}
 	
-	$("#buyCursorBtn").attr("title","Currently have: " + cursors.amount);
+	$("#buyCursorBtn").attr("data-tooltip","Currently have: " + cursors.amount);
 	
+	//$('.button, .buttonUnLit').qtip('', 'content.text', "Currentlyyy have: " + cursors.amount);
 }
 		
 function save(){
@@ -95,3 +104,4 @@ function load(){
 	document.getElementById("pointsDisplay").innerHTML = points;
 	document.getElementById("cursorCostDisplay").innerHTML = nextCost;
 }
+
